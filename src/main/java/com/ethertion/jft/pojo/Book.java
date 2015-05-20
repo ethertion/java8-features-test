@@ -7,6 +7,10 @@ package com.ethertion.jft.pojo;
 public class Book implements Document {
     
     private final String text = "This is the story of ...";
+    
+    public Book(){
+        
+    }
 
     @Override
     public void read(int n) {
