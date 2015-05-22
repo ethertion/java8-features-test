@@ -64,11 +64,9 @@ public class Lambda {
      * @param tester
      */
     private void printBook(List<Book> list, Predicate<Book> tester) {
-        for (Book b : list) {
-            if (tester.test(b)) {
-                System.out.println(b.toString());
-            }
-        }
+        list.stream().filter((b) -> (tester.test(b))).forEach((b) -> {
+            System.out.println(b.toString());
+        });
     }
     
     /**
