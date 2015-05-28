@@ -7,9 +7,8 @@ import java.util.function.Supplier;
  * @author amiguel
  */
 public interface DocumentFactory {
-    
-    //static method
-    static Document create(Supplier<Document> supplier) {
+        
+    static Book create(Supplier<Book> supplier) {
         return supplier.get();
     }
     
