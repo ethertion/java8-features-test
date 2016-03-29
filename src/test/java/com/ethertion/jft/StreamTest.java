@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 import static org.junit.Assert.*;
@@ -19,14 +20,22 @@ public class StreamTest {
 
     @Test
     public void test() {
-
+        //foreach
         letters.forEach(l -> System.out.println(l));
         assertTrue(letters.stream().count()==letters.size());
 
         //filters
+        Function<Integer, Integer> add1 = e -> e + 1;
         Predicate<Integer> isOdd = n -> n % 2 != 0;
         Predicate<Integer> eq3 = n -> n==3;
-        numbers.stream().filter(isOdd.and(eq3)).forEach(e -> System.out.println(e));
+        //filter with predicate odd numbers, adds 1 and limits to 1 result
+        numbers.stream().filter(isOdd)
+                        .map(add1)
+                        .limit(1)
+                        .forEach(e -> assertTrue(e.equals(2)));
 
+        //parallel stream
+        numbers.stream().parallel().forEach(e ->System.out.println(e));
     }
+
 }
