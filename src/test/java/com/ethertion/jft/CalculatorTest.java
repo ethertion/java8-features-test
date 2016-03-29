@@ -39,13 +39,6 @@ public class CalculatorTest {
         assertTrue(Calculator.isEven(2));
         assertTrue(Calculator.isOdd(1));
 
-        //static method with param
-        evenNumbers.forEach(Calculator::print);
-        assertTrue(true);
-
-        //non-static method with param
-        oddNumbers.forEach (calc::printFormula);
-        assertTrue(true);
     }
 
 }

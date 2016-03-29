@@ -28,14 +28,6 @@ public interface Calculator {
         return PI * (radious * radious);
     }
 
-    default void printFormula (int a){
-        System.out.println("A = π " + a + "^2");
-    }
-
-    default void printPI (){
-        System.out.println(PI);
-    }
-
     //M static methods
     static boolean isEven (int a){
         return a % 2 == 0;
